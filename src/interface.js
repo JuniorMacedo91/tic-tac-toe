@@ -16,24 +16,17 @@ function handleClick(event){
     let position = squareTarget.id
 
     if(handleMove(position)){
-        setSymbol();
         setTimeout(()=>{
-            alert('Game Over')
+            alert(`Game Over - O Vencedor foi ${playerTurn} ` )
         },20)
     }
-    setSymbol();
+    setSymbol(position);
 }
 
 // Display symbols
-function setSymbol(){
-    const squares = document.querySelectorAll('.square')
 
-    squares.forEach(square =>{
-        let position = square.id;
-        let symbol = container[position];
-
-        if(symbol != ''){
-            square.innerHTML = `<img src="./assets/${symbol}.svg" alt="">`
-        }
-    })
+function setSymbol(pos){
+    let square = document.getElementById(pos.toString());
+    let symbol = container[pos];
+    square.innerHTML = `<img src="./assets/${symbol}.svg" alt="">`
 }

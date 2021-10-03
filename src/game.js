@@ -1,4 +1,4 @@
-const container = ['','','','','','','','',''];
+let container = ['','','','','','','','',''];
 let playerTurn = 0;
 const symbols = ['cross','circle']
 let gameOver = false;
@@ -25,11 +25,7 @@ function handleMove(index){
         gameOver = isWin()
 
         if(!gameOver){
-            if(playerTurn == 0){
-                playerTurn = 1
-            } else{
-                playerTurn = 0
-            }
+            playerTurn = playerTurn == 0 ? 1 :0;
         }
     }
     return gameOver

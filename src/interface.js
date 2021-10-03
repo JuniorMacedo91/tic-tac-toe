@@ -15,9 +15,11 @@ function handleClick(event){
     let squareTarget = event.target;
     let position = squareTarget.id
 
-    handleMove(position)
+    handleMove(position);
+    setSymbol()
 }
 
+// Display symbols
 function setSymbol(){
     const squares = document.querySelectorAll('.square')
 
@@ -30,4 +32,3 @@ function setSymbol(){
         }
     })
 }
-

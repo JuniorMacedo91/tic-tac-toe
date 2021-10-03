@@ -12,13 +12,12 @@
     display: grid;
     place-content: center;
     align-content: space-around;
-    background-color: black;
 }
 
 #gameContainer{
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 10px;
+    gap: 5px;
     background-color: teal;
 }
 
@@ -29,8 +28,7 @@
 
     display: grid;
     place-items: center;
-    border: 2px solid black;
-    background-color: black;
+    background-color: white;
 }
 
 img{

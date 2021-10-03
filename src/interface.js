@@ -21,6 +21,7 @@ function handleClick(event){
 
 // Display symbols
 function setSymbol(){
+
     const squares = document.querySelectorAll('.square')
 
     squares.forEach(square =>{

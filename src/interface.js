@@ -15,13 +15,17 @@ function handleClick(event){
     let squareTarget = event.target;
     let position = squareTarget.id
 
-    handleMove(position);
-    setSymbol()
+    if(handleMove(position)){
+        setSymbol();
+        setTimeout(()=>{
+            alert('Game Over')
+        },20)
+    }
+    setSymbol();
 }
 
 // Display symbols
 function setSymbol(){
-
     const squares = document.querySelectorAll('.square')
 
     squares.forEach(square =>{

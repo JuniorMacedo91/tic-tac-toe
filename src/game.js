@@ -1,4 +1,4 @@
-const container = []
+const container = ['','','','','','','','',''];
 let playerTurn = 0;
 const symbols = ['cross','circle']
 let gameOver = false;
@@ -15,14 +15,13 @@ const winStates = [
 ]
 
 function handleMove(index){
-
+    
     if(gameOver){
         return;
     }
-    
-    if(container[index] == ''){
-        container[index] = symbols[playerTurn]
 
+    if(container[index] == ''){
+        container[index] = symbols[playerTurn];
         gameOver = isWin()
 
         if(!gameOver){
@@ -37,16 +36,19 @@ function handleMove(index){
 }
 
 function isWin(){
-    winStates.map(position => {
+    for( let i = 0; i < winStates.length; i++){
+        let position = winStates[i]
 
         let firstPostion = position[0];
         let secondPosition = position[1];
         let thirdPosition = position[2]
 
-        if(container[firstPostion] == container[secondPosition] && container[secondPosition] == container[thirdPosition] && container[firstPostion] != ''){
+        if(container[firstPostion] == container[secondPosition] && 
+            container[secondPosition] == container[thirdPosition] && 
+            container[firstPostion] != ''){
             return true
         }
-    })
+    }
     return false
 }
 
